@@ -9,6 +9,9 @@ x-postgres:
     timeout: 12s
     retries: 3
 
+
+name: omnivore
+
 services:
   traefik:
     image: traefik:v3.2
@@ -191,9 +194,15 @@ services:
       redis:
         condition: service_healthy
     restart: unless-stopped
-    
+
 volumes:
   pgdata:
+    external: true
+    name: docker-compose_pgdata
   redis_data:
+    external: true
+    name: docker-compose_redis_data
   minio_data:
+    external: true
+    name: docker-compose_minio_data
 
