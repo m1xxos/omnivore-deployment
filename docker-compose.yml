@@ -50,15 +50,15 @@ services:
       - .env
     restart: unless-stopped
 
-  migrate:
-    image: m1xxos/omnivore-migrate
-    container_name: "omnivore-migrate"
-    command: '/bin/sh ./packages/db/setup.sh' # Also create a demo user with email: demo@omnivore.app, password: demo_password
-    env_file:
-      - .env
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # migrate:
+  #   image: m1xxos/omnivore-migrate
+  #   container_name: "omnivore-migrate"
+  #   command: '/bin/sh ./packages/db/setup.sh' # Also create a demo user with email: demo@omnivore.app, password: demo_password
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
   api:
     image: m1xxos/omnivore-api:alpine
@@ -73,9 +73,9 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-    depends_on:
-      migrate:
-        condition: service_completed_successfully
+    # depends_on:
+    #   migrate:
+    #     condition: service_completed_successfully
 
   queue-processor:
     image: m1xxos/omnivore-queue-processor
