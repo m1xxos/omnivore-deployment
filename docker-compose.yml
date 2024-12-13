@@ -117,8 +117,7 @@ services:
     restart: unless-stopped
 
   content-fetch:
-    # image: ghcr.io/m1xxos/omnivore-content-fetch:sha-7a26151
-    image: m1xxos/omnivore-content-fetch
+    image: ghcr.io/m1xxos/omnivore-content-fetch:sha-5f0327a
     container_name: "omnivore-content-fetch"
     ports:
       - "9090:8080"
