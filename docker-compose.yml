@@ -61,8 +61,8 @@ services:
   #       condition: service_healthy
 
   api:
-    # image: ghcr.io/m1xxos/omnivore-api:sha-76421b9
-    image: m1xxos/omnivore-api
+    image: ghcr.io/m1xxos/omnivore-api:sha-76421b9
+    # image: m1xxos/omnivore-api
     container_name: "omnivore-api"
     ports:
       - "4000:8080"
@@ -118,8 +118,8 @@ services:
     restart: unless-stopped
 
   content-fetch:
-    # image: ghcr.io/m1xxos/omnivore-content-fetch:sha-5f0327a
-    image: m1xxos/omnivore-content-fetch
+    image: ghcr.io/m1xxos/omnivore-content-fetch:sha-5f0327a
+    # image: m1xxos/omnivore-content-fetch
     container_name: "omnivore-content-fetch"
     ports:
       - "9090:8080"
