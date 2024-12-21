@@ -79,7 +79,7 @@ services:
     #     condition: service_completed_successfully
 
   queue-processor:
-    image: m1xxos/omnivore-queue-processor
+    image: ghcr.io/m1xxos/queue-processor:sha-48bd323
     container_name: "omnivore-queue-processor"
     env_file:
       - .env
@@ -118,7 +118,7 @@ services:
     restart: unless-stopped
 
   content-fetch:
-    image: ghcr.io/m1xxos/omnivore-content-fetch:sha-5f0327a
+    image: ghcr.io/m1xxos/omnivore-content-fetch:sha-a77b3b9
     # image: m1xxos/omnivore-content-fetch
     container_name: "omnivore-content-fetch"
     ports:
