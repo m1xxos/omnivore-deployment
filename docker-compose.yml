@@ -100,7 +100,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     labels:
-    - "traefik.enable=false"
+    - "traefik.enable=true"
     - "traefik.http.routers.web.entrypoints=web"
     - "traefik.http.routers.web.rule=Host(`omnivore.m1xxos.local`)"
     - "traefik.http.services.web.loadbalancer.server.port=3000"
